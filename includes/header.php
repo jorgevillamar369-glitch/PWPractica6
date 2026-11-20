@@ -43,7 +43,7 @@ $menu[] = ['proveeduria.php', 'Proveeduría', 'caja', [ROL_ADMIN, ROL_GERENTE, R
 <div class="offcanvas-lg offcanvas-start barra-lateral" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralTitulo">
     <div class="barra-marca">
         <a href="panel.php" class="marca-panel" id="menuLateralTitulo">
-            <span class="marca-simbolo">M</span>
+            <img class="marca-simbolo" src="assets/img/marca-mangle.svg" alt="" width="40" height="40">
             <span>Hotel Mangle<small>Ayampe · Manabí</small></span>
         </a>
         <button type="button" class="btn-cerrar-menu d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#menuLateral" aria-label="Cerrar menú">

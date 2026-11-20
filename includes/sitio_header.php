@@ -20,7 +20,7 @@ $pagina = $pagina ?? '';
 <header class="sitio-barra">
     <div class="contenedor barra-interior">
         <a href="index.php" class="marca-sitio" aria-label="Hotel Mangle, inicio">
-            <span class="marca-simbolo">M</span>
+            <img class="marca-simbolo" src="assets/img/marca-mangle.svg" alt="" width="40" height="40">
             <span class="marca-texto">Hotel Mangle<small>Ayampe · Ecuador</small></span>
         </a>
 

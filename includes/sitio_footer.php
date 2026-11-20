@@ -2,7 +2,7 @@
     <div class="contenedor">
         <div class="pie-arriba">
             <div class="pie-marca">
-                <span class="marca-simbolo">M</span>
+                <img class="marca-simbolo" src="assets/img/marca-mangle.svg" alt="" width="40" height="40">
                 <p class="pie-nombre">Hotel Mangle</p>
                 <p class="pie-texto">Doce habitaciones entre el manglar y la playa de Ayampe. Desayuno incluido, reserva directa y ningún intermediario.</p>
             </div>

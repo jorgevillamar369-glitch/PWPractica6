@@ -81,7 +81,7 @@ $titulo = 'Crear cuenta · ' . APP_NOMBRE;
     <aside class="acceso-foto">
         <div class="acceso-foto-fondo" style="background-image:url('assets/img/hab1.jpg')"></div>
         <a href="index.php" class="marca-sitio marca-clara">
-            <span class="marca-simbolo">M</span>
+            <img class="marca-simbolo" src="assets/img/marca-mangle.svg" alt="" width="40" height="40">
             <span class="marca-texto">Hotel Mangle<small>Ayampe · Ecuador</small></span>
         </a>
         <div class="acceso-frase">
