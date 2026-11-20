@@ -9,7 +9,7 @@ $pagina = $pagina ?? '';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($titulo ?? APP_NOMBRE . ' · ' . APP_LUGAR) ?></title>
-    <meta name="description" content="Hotel Mangle: doce habitaciones frente al mar en Ayampe, Manabí. Reserva directa, sin comisiones.">
+    <meta name="description" content="Hotel Mangle: habitaciones frente al mar en Ayampe, Manabí. Reserva directa, sin comisiones.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/css/fuentes.css">
     <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">

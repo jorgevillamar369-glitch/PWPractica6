@@ -37,7 +37,7 @@ if (in_array($rol, [ROL_ADMIN, ROL_GERENTE, ROL_RECEPCION], true)) {
         ['Habitaciones libres', $disponibles, 'de ' . $totalHab . ' en total', 'cama'],
         ['Reservas activas', $activas, 'pendientes y confirmadas', 'calendario'],
         ['Ocupación de hoy', $totalHab ? round($ocupadas / $totalHab * 100) . '%' : '0%', $ocupadas === 1 ? '1 habitación ocupada' : $ocupadas . ' habitaciones ocupadas', 'panel'],
-        ['Llegadas de hoy', 0, 'huéspedes por recibir', 'reloj'],
+        ['Llegadas de hoy', 0, 'por recibir', 'reloj'],
     ];
 
     $stmt = $pdo->prepare(
@@ -72,9 +72,9 @@ if (in_array($rol, [ROL_ADMIN, ROL_GERENTE, ROL_RECEPCION], true)) {
     )->fetchAll();
 
     if ($rol === ROL_ADMIN) {
-        $stats[] = ['Usuarios', (int) $pdo->query('SELECT COUNT(*) FROM users')->fetchColumn(), 'de los cinco roles', 'usuarios'];
+        $stats[] = ['Usuarios', (int) $pdo->query('SELECT COUNT(*) FROM users')->fetchColumn(), 'roles del sistema', 'usuarios'];
     } else {
-        $stats[] = ['Provisiones abiertas', (int) $pdo->query("SELECT COUNT(*) FROM supplies WHERE status = 'requested'")->fetchColumn(), 'necesidades sin oferta', 'caja'];
+        $stats[] = ['Sin oferta', (int) $pdo->query("SELECT COUNT(*) FROM supplies WHERE status = 'requested'")->fetchColumn(), 'necesidades por atender', 'caja'];
     }
 }
 
@@ -98,7 +98,7 @@ if ($rol === ROL_CLIENTE) {
 
     $stats = [
         ['Reservas hechas', $totalReservas, 'desde que creaste la cuenta', 'calendario'],
-        ['Estancias completadas', $estancias, 'gracias por volver', 'check'],
+        ['Estancias completadas', $estancias, 'en total', 'check'],
         ['Próxima llegada', $proxima ? fecha_corta($proxima['check_in_date']) : '—', $proxima ? 'Habitación ' . $proxima['room_number'] : 'sin reservas activas', 'reloj'],
     ];
 
@@ -123,7 +123,7 @@ if ($rol === ROL_PROVEEDOR) {
     $aceptadas = (int) $stmt->fetchColumn();
 
     $stats = [
-        ['Necesidades abiertas', $abiertas, 'puedes ofertar por ellas', 'caja'],
+        ['Sin oferta', $abiertas, 'puedes ofertar por ellas', 'caja'],
         ['Ofertas enviadas', $totalOfertas, 'en total', 'lapiz'],
         ['Ofertas aceptadas', $aceptadas, 'pedidos en curso', 'check'],
     ];
@@ -156,15 +156,15 @@ include __DIR__ . '/includes/header.php';
         <h2><?= e($saludo) ?>, <?= e($nombreCorto) ?>.</h2>
         <p class="bienvenida-texto">
             <?php if ($rol === ROL_CLIENTE): ?>
-                Revisa tus próximas fechas o busca una habitación para la siguiente escapada.
+                Revisa tus reservas o busca fechas para tu próxima estancia.
             <?php elseif ($rol === ROL_PROVEEDOR): ?>
-                Estas son las necesidades del hotel que todavía no tienen proveedor.
+                Necesidades del hotel sin proveedor.
             <?php elseif ($rol === ROL_RECEPCION): ?>
-                Empieza por las llegadas de hoy y las habitaciones que quedan libres.
+                Revisa las llegadas de hoy y las habitaciones libres.
             <?php elseif ($rol === ROL_GERENTE): ?>
-                Ocupación, llegadas y provisiones del hotel en una sola vista.
+                Ocupación, llegadas y necesidades del hotel.
             <?php else: ?>
-                Control general del sistema: personas, habitaciones y operación del día.
+                Personas, habitaciones y operación del día.
             <?php endif; ?>
         </p>
     </div>
@@ -216,7 +216,7 @@ include __DIR__ . '/includes/header.php';
                 </div>
             <?php else: ?>
                 <div class="bloque-vacio">
-                    <p>No tienes reservas activas. Las fechas de Ayampe se llenan rápido en temporada alta.</p>
+                    <p>No tienes reservas activas.</p>
                     <a href="disponibilidad.php" class="btn-panel">Ver disponibilidad</a>
                 </div>
             <?php endif; ?>
@@ -265,7 +265,7 @@ include __DIR__ . '/includes/header.php';
                     <?php endforeach; ?>
                 </ul>
             <?php else: ?>
-                <p class="texto-suave">No hay necesidades abiertas en este momento.</p>
+                <p class="texto-suave">No hay necesidades sin oferta.</p>
             <?php endif; ?>
         </section>
 
@@ -304,7 +304,7 @@ include __DIR__ . '/includes/header.php';
                 <div class="tabla-envoltura">
                     <table class="tabla">
                         <thead>
-                            <tr><th>Huésped</th><th>Habitación</th><th>Fechas</th><th>Estado</th></tr>
+                            <tr><th>Cliente</th><th>Habitación</th><th>Fechas</th><th>Estado</th></tr>
                         </thead>
                         <tbody>
                             <?php foreach ($llegadas as $r): ?>
@@ -324,7 +324,7 @@ include __DIR__ . '/includes/header.php';
             <?php endif; ?>
 
             <?php if ($salidas): ?>
-                <p class="nota-bloque"><?= count($salidas) ?> <?= count($salidas) === 1 ? 'salida confirmada' : 'salidas confirmadas' ?> para hoy. Revisa el check-out antes de las 11:00.</p>
+                <p class="nota-bloque"><?= count($salidas) ?> <?= count($salidas) === 1 ? 'salida confirmada' : 'salidas confirmadas' ?> para hoy. Revisa la salida antes de las 11:00.</p>
             <?php endif; ?>
         </section>
 
@@ -338,7 +338,7 @@ include __DIR__ . '/includes/header.php';
                     <li>
                         <span>
                             <strong><?= e($r['cliente']) ?></strong>
-                            <small>Hab. <?= (int) $r['room_number'] ?> · <?= fecha_corta($r['check_in_date']) ?> al <?= fecha_corta($r['check_out_date']) ?> · <?= dinero($r['total']) ?></small>
+                            <small>Hab. <?= (int) $r['room_number'] ?> · <?= fecha_corta($r['check_in_date']) ?> — <?= fecha_corta($r['check_out_date']) ?> · <?= dinero($r['total']) ?></small>
                         </span>
                         <span class="etiqueta etiqueta-<?= $clase ?>"><?= e($etiqueta) ?></span>
                     </li>

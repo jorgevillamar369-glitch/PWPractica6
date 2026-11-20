@@ -99,7 +99,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Los clientes pueden reservar por su cuenta; aquí recepción completa o corrige sus datos.</p>
+        <p class="pagina-intro">El cliente puede reservar por su cuenta; recepción corrige sus datos.</p>
     </div>
     <div class="pagina-acciones">
         <a href="clientes.php" class="btn-panel btn-panel-linea">&larr; Volver a clientes</a>
@@ -149,9 +149,9 @@ include __DIR__ . '/includes/header.php';
     <aside class="bloque nota-lateral">
         <p class="sobrelinea">Recepción</p>
         <h2>Antes de guardar</h2>
-        <p>Verifica el correo: es el usuario con el que el huésped entra al sistema.</p>
-        <p>Si desactivas la cuenta, la persona no podrá iniciar sesión, pero sus reservas se conservan.</p>
-        <p>Las contraseñas se guardan cifradas. Nadie puede leerlas, ni siquiera el administrador.</p>
+        <p>Verifica el correo: es el acceso del cliente.</p>
+        <p>Si desactivas la cuenta, no podrá iniciar sesión; sus reservas se conservan.</p>
+        <p>Las contraseñas se guardan cifradas; nadie puede leerlas.</p>
     </aside>
 </div>
 

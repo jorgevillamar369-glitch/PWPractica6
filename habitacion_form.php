@@ -112,7 +112,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Los cambios de precio y disponibilidad se reflejan en el sitio y en el buscador de fechas.</p>
+        <p class="pagina-intro">Los cambios se ven en el sitio y en el buscador.</p>
     </div>
     <div class="pagina-acciones">
         <a href="habitaciones.php" class="btn-panel btn-panel-linea">&larr; Volver al listado</a>
@@ -185,9 +185,9 @@ include __DIR__ . '/includes/header.php';
     <aside class="bloque nota-lateral">
         <p class="sobrelinea">Antes de guardar</p>
         <h2>Precios y estado</h2>
-        <p>El precio se guarda sin impuestos. En el sitio se muestra como “por noche” e incluye el desayuno.</p>
-        <p>Si marcas la habitación como no disponible, deja de aparecer en el buscador aunque no tenga reservas. Úsalo para mantenimiento.</p>
-        <p>No se puede eliminar una habitación con reservas registradas: primero hay que resolver esas reservas.</p>
+        <p>El precio se guarda sin impuestos y se muestra por noche.</p>
+        <p>Si la marcas como no disponible, sale del buscador aunque no tenga reservas. Úsalo para mantenimiento.</p>
+        <p>No se puede eliminar una habitación con reservas. Resuélvelas primero.</p>
     </aside>
 </div>
 

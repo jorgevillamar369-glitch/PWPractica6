@@ -41,7 +41,7 @@ if ($accion === 'confirmar') {
     } else {
         $stmt = $pdo->prepare("UPDATE bookings SET status = 'confirmed' WHERE id = :id");
         $stmt->execute(['id' => $id]);
-        mensaje('ok', 'Reserva confirmada. El huésped ya puede llegar.');
+        mensaje('ok', 'Reserva confirmada.');
     }
 } elseif ($accion === 'cancelar') {
     if (!in_array($estadoActual, ['pending', 'confirmed'], true)) {

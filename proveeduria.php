@@ -54,9 +54,9 @@ include __DIR__ . '/includes/header.php';
     <div>
         <p class="pagina-intro">
             <?php if ($esProveedor): ?>
-                Estas son las necesidades abiertas del hotel. Envía un precio por unidad y gerencia decide.
+                Necesidades del hotel. Envía un precio por unidad; gerencia decide.
             <?php else: ?>
-                Insumos que el hotel necesita. Publica la necesidad y compara las ofertas recibidas.
+                Insumos que necesita el hotel. Publica una necesidad y compara ofertas.
             <?php endif; ?>
         </p>
     </div>
@@ -87,7 +87,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="bloque">
     <div class="bloque-cabeza">
-        <h2><?= $esProveedor ? 'Necesidades abiertas' : 'Necesidades registradas' ?></h2>
+        <h2><?= $esProveedor ? 'Necesidades en curso' : 'Necesidades registradas' ?></h2>
         <span class="texto-suave"><?= count($necesidades) ?> <?= count($necesidades) === 1 ? 'registro' : 'registros' ?></span>
     </div>
 
@@ -155,7 +155,7 @@ include __DIR__ . '/includes/header.php';
 
     <?php if (!$necesidades): ?>
         <div class="bloque-vacio">
-            <p>No hay necesidades registradas con ese estado.</p>
+            <p>No hay necesidades con ese estado.</p>
             <?php if ($esStaff): ?>
                 <a href="necesidad_form.php" class="btn-panel">Publicar la primera</a>
             <?php endif; ?>

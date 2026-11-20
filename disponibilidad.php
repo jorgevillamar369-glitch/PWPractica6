@@ -84,7 +84,7 @@ include __DIR__ . '/includes/sitio_header.php';
 
         <div class="resultado-cabeza">
             <p><strong><?= count($disponibles) ?></strong> <?= count($disponibles) === 1 ? 'habitación libre' : 'habitaciones libres' ?> para esas fechas</p>
-            <p class="resultado-nota">El precio incluye desayuno e impuestos. El pago se hace en recepción.</p>
+            <p class="resultado-nota">Precio por habitación y noche, con desayuno. El pago se hace en recepción.</p>
         </div>
 
         <?php if (!$disponibles): ?>

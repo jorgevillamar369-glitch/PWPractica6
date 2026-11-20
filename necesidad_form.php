@@ -52,7 +52,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Describe el insumo, la cantidad y la fecha límite. La necesidad queda visible para todos los proveedores.</p>
+        <p class="pagina-intro">Indica insumo, cantidad y fecha. La necesidad queda visible para todos los proveedores.</p>
     </div>
     <div class="pagina-acciones">
         <a href="proveeduria.php" class="btn-panel btn-panel-linea">&larr; Volver a proveeduría</a>
@@ -99,7 +99,7 @@ include __DIR__ . '/includes/header.php';
         <h2>De la necesidad al pedido</h2>
         <p>Al publicar, la necesidad aparece como <strong>solicitada</strong>. Los proveedores envían su precio por unidad.</p>
         <p>Cuando aceptas una oferta, el insumo pasa a <strong>con oferta</strong> y queda asignado a ese proveedor. Las demás ofertas se rechazan.</p>
-        <p>Al recibir la mercadería, marca la necesidad como <strong>recibida</strong> para cerrar el ciclo.</p>
+        <p>Cuando llegue, marca la necesidad como <strong>recibida</strong>.</p>
     </aside>
 </div>
 

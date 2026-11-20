@@ -12,6 +12,16 @@ $habitaciones = $pdo->query(
      ORDER BY precio'
 )->fetchAll();
 
+$totalHabitaciones = (int) $pdo->query('SELECT COUNT(*) FROM rooms')->fetchColumn();
+$textoHabitaciones = $totalHabitaciones === 1
+    ? 'Una habitación'
+    : ucfirst(numero_en_letras($totalHabitaciones)) . ' habitaciones';
+
+$formas = count($habitaciones);
+$textoFormas = $formas === 1
+    ? 'Una forma de quedarse'
+    : ucfirst(numero_en_letras($formas)) . ' formas de quedarse';
+
 $descripciones = [
     'Doble'    => 'Cama king o dos individuales, balcón y ducha de lluvia. Para dos personas.',
     'Suite'    => 'Sala pequeña, tina y vista al jardín de mangle. Terraza en la planta alta.',
@@ -31,9 +41,9 @@ include __DIR__ . '/includes/sitio_header.php';
 
         <div class="contenedor portada-contenido">
             <p class="sobrelinea claro">Ayampe · Manabí · Ecuador</p>
-            <h1>Doce habitaciones<br>entre el manglar<br>y el mar.</h1>
-            <p class="portada-texto">Un hotel pequeño en la costa de Manabí. Desayuno con fruta del día, piscina entre palmeras y la playa a tres minutos a pie.</p>
-            <p class="portada-datos">12 habitaciones <span>·</span> Piscina <span>·</span> Desayuno incluido</p>
+            <h1><?= e($textoHabitaciones) ?><br>entre el manglar<br>y el mar.</h1>
+            <p class="portada-texto">Un hotel pequeño en la costa de Manabí. Desayuno, piscina y la playa a tres minutos a pie.</p>
+            <p class="portada-datos"><?= e($textoHabitaciones) ?> <span>·</span> Piscina <span>·</span> Desayuno incluido</p>
         </div>
 
         <div class="contenedor">
@@ -64,9 +74,9 @@ include __DIR__ . '/includes/sitio_header.php';
             <div class="seccion-cabeza">
                 <div>
                     <p class="sobrelinea">01 · Habitaciones</p>
-                    <h2>Tres formas de quedarse</h2>
+                    <h2><?= e($textoFormas) ?></h2>
                 </div>
-                <p class="seccion-intro">Todas incluyen desayuno, ropa de cama de algodón y acceso a la piscina. Los precios son por noche, para dos personas, salvo la familiar.</p>
+                <p class="seccion-intro">Todas incluyen desayuno y acceso a la piscina. Precios por habitación y noche.</p>
             </div>
 
             <div class="rejilla-habitaciones">
@@ -82,7 +92,7 @@ include __DIR__ . '/includes/sitio_header.php';
                                 <p class="precio"><?= dinero($h['precio']) ?><small>/ noche</small></p>
                             </div>
                             <p class="tarjeta-texto"><?= e($descripciones[$h['room_type']] ?? 'Habitación exterior con baño privado.') ?></p>
-                            <p class="tarjeta-meta">Hasta <?= (int) $h['capacidad'] ?> personas · <?= (int) $h['total'] ?> <?= (int) $h['total'] === 1 ? 'habitación' : 'habitaciones' ?></p>
+                            <p class="tarjeta-meta">Hasta <?= (int) $h['capacidad'] ?> personas · <?= (int) $h['total'] ?> disponibles</p>
                             <a class="enlace-flecha" href="disponibilidad.php?personas=<?= (int) $h['capacidad'] ?>&amp;desde=<?= e($llegada) ?>&amp;hasta=<?= e($salida) ?>">
                                 Ver fechas disponibles <?= icono('flecha') ?>
                             </a>
@@ -102,12 +112,12 @@ include __DIR__ . '/includes/sitio_header.php';
 
             <div class="editorial-texto">
                 <p class="sobrelinea">02 · El hotel</p>
-                <h2>Una casa de playa,<br>no un resort.</h2>
-                <p>Abrimos en 2019 con doce habitaciones y una idea sencilla: que el huésped se sienta en casa de un amigo que vive frente al mar. No hay música en los pasillos ni animación en la piscina.</p>
-                <p>La construcción es de madera y caña, con techos altos y ventilación cruzada. El agua caliente viene de paneles solares y el jardín se riega con agua de lluvia recogida.</p>
+                <h2>Una casa de playa,<br>con pocas habitaciones.</h2>
+                <p>Abrimos en 2019 con una idea sencilla: que el huésped se sienta en casa de un amigo frente al mar. Sin música en los pasillos ni animación en la piscina.</p>
+                <p>Madera y caña, techos altos y ventilación cruzada. El agua caliente es solar y el jardín se riega con lluvia recogida.</p>
 
                 <dl class="cifras">
-                    <div><dt>12</dt><dd>habitaciones</dd></div>
+                    <div><dt><?= $totalHabitaciones ?></dt><dd>habitaciones</dd></div>
                     <div><dt>3 min</dt><dd>a la playa</dd></div>
                     <div><dt>2019</dt><dd>año de apertura</dd></div>
                 </dl>
@@ -126,7 +136,7 @@ include __DIR__ . '/includes/sitio_header.php';
             </div>
 
             <div class="lista-servicios">
-                <div class="servicio"><span class="servicio-num">01</span><div><h3>Desayuno de 07:00 a 10:00</h3><p>Fruta de temporada, pan de masa madre, huevos al gusto y café de Loja. Sin costo adicional.</p></div></div>
+                <div class="servicio"><span class="servicio-num">01</span><div><h3>Desayuno de 07:00 a 10:00</h3><p>Fruta de temporada, pan de masa madre, huevos al gusto y café de Loja.</p></div></div>
                 <div class="servicio"><span class="servicio-num">02</span><div><h3>Piscina y jardín</h3><p>Abierta de 08:00 a 20:00. Camastros, toallas de piscina y ducha exterior.</p></div></div>
                 <div class="servicio"><span class="servicio-num">03</span><div><h3>Wi-Fi en todo el hotel</h3><p>Fibra de 100 Mbps. También llega a la terraza y a la zona de hamacas.</p></div></div>
                 <div class="servicio"><span class="servicio-num">04</span><div><h3>Parqueadero privado</h3><p>Seis puestos dentro del terreno, sin reserva previa y sin costo.</p></div></div>
@@ -138,8 +148,8 @@ include __DIR__ . '/includes/sitio_header.php';
 
     <section class="seccion seccion-entorno" id="entorno">
         <div class="entorno-foto">
-            <img src="assets/img/playa.jpg" alt="Playa de arena blanca y agua turquesa en Ayampe" loading="lazy">
-            <p class="entorno-pie">Playa de Ayampe. Tres minutos a pie desde la recepción.</p>
+            <img src="assets/img/playa.jpg" alt="Playa de arena blanca y agua turquesa" loading="lazy">
+            <p class="entorno-pie">La playa, a tres minutos a pie.</p>
         </div>
 
         <div class="contenedor rejilla-entorno">

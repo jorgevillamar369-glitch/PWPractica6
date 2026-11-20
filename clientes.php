@@ -32,7 +32,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Datos de contacto e historial de los huéspedes. Recepción puede corregir teléfonos y correos.</p>
+        <p class="pagina-intro">Datos e historial de los clientes. Recepción corrige teléfonos y correos.</p>
         <p class="pagina-dato"><strong><?= count($clientes) ?></strong> <?= count($clientes) === 1 ? 'cliente registrado' : 'clientes registrados' ?></p>
     </div>
     <div class="pagina-acciones">

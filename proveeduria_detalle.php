@@ -39,7 +39,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Compara precio y condiciones. Al aceptar una oferta, las demás se rechazan automáticamente.</p>
+        <p class="pagina-intro">Compara precio y condiciones. Al aceptar una oferta, las demás se rechazan.</p>
         <p class="pagina-dato"><span class="etiqueta etiqueta-<?= $clase ?>"><?= e($etiqueta) ?></span></p>
     </div>
     <div class="pagina-acciones">

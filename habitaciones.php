@@ -22,11 +22,11 @@ include __DIR__ . '/includes/header.php';
     <div>
         <p class="pagina-intro">
             <?php if ($esCliente): ?>
-                Doce habitaciones, tres tipos. Consulta la disponibilidad y elige las fechas que te acomoden.
+                Consulta la disponibilidad y elige tus fechas.
             <?php elseif ($puedeEditar): ?>
-                Altas, precios y estado de las habitaciones. Los cambios se ven de inmediato en el sitio público.
+                Altas, precios y disponibilidad. Los cambios se ven en el sitio.
             <?php else: ?>
-                Estado actual de las habitaciones para orientar a los huéspedes.
+                Estado de las habitaciones para orientar a los huéspedes.
             <?php endif; ?>
         </p>
         <p class="pagina-dato"><strong><?= $libres ?></strong> de <?= count($habitaciones) ?> habitaciones disponibles</p>

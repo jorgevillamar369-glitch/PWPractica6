@@ -86,8 +86,8 @@ $titulo = 'Crear cuenta · ' . APP_NOMBRE;
         </a>
         <div class="acceso-frase">
             <p class="sobrelinea claro">Tu cuenta de huésped</p>
-            <p class="acceso-cita">“Guarda tus fechas en un solo lugar. Cambiar una reserva también es parte del viaje.”</p>
-            <p class="acceso-pie">Doce habitaciones · Desayuno incluido</p>
+            <p class="acceso-cita">“Tus fechas en un solo lugar. Cambiar una reserva también es parte del viaje.”</p>
+            <p class="acceso-pie">Habitaciones frente al mar · Desayuno incluido</p>
         </div>
     </aside>
 
@@ -96,7 +96,7 @@ $titulo = 'Crear cuenta · ' . APP_NOMBRE;
             <a href="index.php" class="volver-sitio">&larr; Volver al sitio</a>
             <p class="sobrelinea">Registro de huéspedes</p>
             <h1>Crear una cuenta</h1>
-            <p class="acceso-texto">Solo necesitas tus datos para reservar y consultar tus fechas. Las cuentas del personal las crea el administrador.</p>
+            <p class="acceso-texto">Crea tu cuenta para reservar y consultar tus fechas. Las cuentas del personal las crea el administrador.</p>
 
             <?php if ($error !== ''): ?>
                 <div class="aviso aviso-error" role="alert"><?= e($error) ?></div>

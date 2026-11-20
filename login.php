@@ -80,7 +80,7 @@ $titulo = 'Ingresar · ' . APP_NOMBRE;
             <a href="index.php" class="volver-sitio">&larr; Volver al sitio</a>
             <p class="sobrelinea">Área privada</p>
             <h1>Entrar al panel</h1>
-            <p class="acceso-texto">Un solo acceso para huéspedes, recepción, gerencia, administración y proveedores. El sistema te lleva a las secciones de tu rol.</p>
+            <p class="acceso-texto">Un acceso para huéspedes y personal. Cada rol ve solo sus secciones.</p>
 
             <?php if ($error !== ''): ?>
                 <div class="aviso aviso-error" role="alert"><?= e($error) ?></div>
@@ -106,7 +106,7 @@ $titulo = 'Ingresar · ' . APP_NOMBRE;
             <details class="cuentas-prueba">
                 <summary>Cuentas de prueba</summary>
                 <table>
-                    <thead><tr><th>Rol</th><th>Correo</th><th>Clave</th></tr></thead>
+                    <thead><tr><th>Rol</th><th>Correo</th><th>Contraseña</th></tr></thead>
                     <tbody>
                         <tr><td>Administrador</td><td>admin@hotelmangle.ec</td><td>Admin123!</td></tr>
                         <tr><td>Gerente</td><td>gerente@hotelmangle.ec</td><td>Gerente123!</td></tr>

@@ -65,16 +65,16 @@ include __DIR__ . '/includes/header.php';
     <div>
         <p class="pagina-intro">
             <?php if ($esStaff): ?>
-                Confirma llegadas, cancela estancias y cierra las reservas que ya terminaron.
+                Confirma llegadas, cancela reservas y cierra estancias.
             <?php else: ?>
-                Aquí están tus fechas en Ayampe. Puedes cancelar mientras la estancia no haya comenzado.
+                Tus reservas en Ayampe. Puedes cancelar mientras la estancia no haya comenzado.
             <?php endif; ?>
         </p>
         <?php if ($esStaff): ?>
             <div class="chips">
-                <span class="chip"><strong><?= (int) ($conteos['pending'] ?? 0) ?></strong> pendientes</span>
-                <span class="chip"><strong><?= (int) ($conteos['confirmed'] ?? 0) ?></strong> confirmadas</span>
-                <span class="chip"><strong><?= (int) ($conteos['completed'] ?? 0) ?></strong> finalizadas</span>
+                <span class="chip"><strong><?= (int) ($conteos['pending'] ?? 0) ?></strong> <?= plural((int) ($conteos['pending'] ?? 0), 'pendiente', 'pendientes') ?></span>
+                <span class="chip"><strong><?= (int) ($conteos['confirmed'] ?? 0) ?></strong> <?= plural((int) ($conteos['confirmed'] ?? 0), 'confirmada', 'confirmadas') ?></span>
+                <span class="chip"><strong><?= (int) ($conteos['completed'] ?? 0) ?></strong> <?= plural((int) ($conteos['completed'] ?? 0), 'finalizada', 'finalizadas') ?></span>
             </div>
         <?php endif; ?>
     </div>
@@ -101,7 +101,7 @@ include __DIR__ . '/includes/header.php';
         </div>
         <div class="campo campo-buscar">
             <label for="q">Buscar</label>
-            <input type="search" id="q" name="q" value="<?= e($buscar) ?>" placeholder="Huésped, correo o habitación">
+            <input type="search" id="q" name="q" value="<?= e($buscar) ?>" placeholder="Cliente, correo o habitación">
         </div>
         <button type="submit" class="btn-panel">Filtrar</button>
         <?php if ($estado !== '' || $buscar !== ''): ?>
@@ -115,7 +115,7 @@ include __DIR__ . '/includes/header.php';
         <table class="tabla tabla-ancha">
             <thead>
                 <tr>
-                    <?php if ($esStaff): ?><th>Huésped</th><?php endif; ?>
+                    <?php if ($esStaff): ?><th>Cliente</th><?php endif; ?>
                     <th>Habitación</th>
                     <th>Llegada</th>
                     <th>Salida</th>
@@ -156,7 +156,7 @@ include __DIR__ . '/includes/header.php';
                             <?php endif; ?>
 
                             <?php if ($esStaff && $r['status'] === 'confirmed' && $r['check_in_date'] <= $hoy): ?>
-                                <form method="post" action="reserva_estado.php" class="en-linea" data-confirmar="¿Cerrar la estancia de <?= e($r['cliente'] ?? 'este huésped') ?>?">
+                                <form method="post" action="reserva_estado.php" class="en-linea" data-confirmar="¿Cerrar la estancia de <?= e($r['cliente'] ?? 'este cliente') ?>?">
                                     <?= csrf_campo() ?>
                                     <input type="hidden" name="id" value="<?= (int) $r['id'] ?>">
                                     <input type="hidden" name="accion" value="finalizar">

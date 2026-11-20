@@ -40,7 +40,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Altas, roles y estado de las cuentas. Cada rol ve solo las secciones que le corresponden.</p>
+        <p class="pagina-intro">Altas, roles y estado de las cuentas. Cada rol ve solo sus secciones.</p>
         <div class="chips">
             <?php foreach ($totalPorRol as $t): ?>
                 <span class="chip"><strong><?= (int) $t['total'] ?></strong> <?= e(etiqueta_rol($t['name'])) ?></span>

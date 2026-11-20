@@ -23,7 +23,7 @@ comunes y el control de sesión.
 | Cliente | `cliente@hotelmangle.ec` | `Cliente123!` |
 | Proveedor | `proveedor@hotelmangle.ec` | `Proveedor123!` |
 
-Las claves están cifradas con `password_hash()` y se verifican con
+Las contraseñas están cifradas con `password_hash()` y se verifican con
 `password_verify()`. Cámbialas antes de publicar el sitio.
 
 ## Roles y permisos
@@ -91,7 +91,7 @@ Tablas y campos añadidos para completar el flujo:
 2. Importa `sql/pwapractica6.sql` desde phpMyAdmin o por consola.
 3. Copia `includes/config.example.php` como `includes/config.php` y ajusta el
    puerto y las credenciales. En este equipo la base corre en el puerto `3307`
-   con el usuario `root` sin clave.
+   con el usuario `root` sin contraseña.
 4. Abre `http://localhost:8090` o configura un virtual host.
 
 Con el servidor integrado de PHP:
@@ -142,7 +142,7 @@ git remote add origin https://github.com/jorgevillamar369-glitch/pwapractica6.gi
 git push -u origin main
 ```
 
-`includes/config.php` está en `.gitignore` porque contiene las claves. En el
+`includes/config.php` está en `.gitignore` porque contiene las contraseñas. En el
 repositorio queda `config.example.php` como plantilla.
 
 ## Estructura

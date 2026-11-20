@@ -132,7 +132,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Revisa las fechas y los huéspedes antes de guardar. El sistema vuelve a comprobar que la habitación siga libre.</p>
+        <p class="pagina-intro">Revisa las fechas y los huéspedes. El sistema comprueba que la habitación siga libre.</p>
     </div>
     <div class="pagina-acciones">
         <a href="reservas.php" class="btn-panel btn-panel-linea">&larr; Volver a reservas</a>
@@ -167,7 +167,7 @@ include __DIR__ . '/includes/header.php';
             </div>
         <?php else: ?>
             <div class="campo">
-                <label>Huésped</label>
+                <label>Cliente</label>
                 <p class="valor-fijo"><?= e(usuario_actual()['nombre']) ?> · <?= e(usuario_actual()['email']) ?></p>
             </div>
         <?php endif; ?>
@@ -180,7 +180,7 @@ include __DIR__ . '/includes/header.php';
             <div class="campo">
                 <label for="hasta">Salida</label>
                 <input type="date" id="hasta" name="hasta" value="<?= e($hasta) ?>" min="<?= date('Y-m-d', strtotime('+1 day')) ?>" required>
-                <p class="ayuda">Check-out antes de las 11:00.</p>
+                <p class="ayuda">Salida antes de las 11:00.</p>
             </div>
         </div>
 

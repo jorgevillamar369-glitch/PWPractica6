@@ -120,7 +120,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">El rol define el menú y los permisos. Los cambios se aplican la próxima vez que la persona inicie sesión.</p>
+        <p class="pagina-intro">El rol define el menú y los permisos; se aplican al volver a iniciar sesión.</p>
     </div>
     <div class="pagina-acciones">
         <a href="usuarios.php" class="btn-panel btn-panel-linea">&larr; Volver a usuarios</a>
@@ -190,7 +190,7 @@ include __DIR__ . '/includes/header.php';
         <h2>Quién puede hacer qué</h2>
         <ul class="lista-rol">
             <li><strong>Administrador</strong> Gestiona usuarios y supervisa todo.</li>
-            <li><strong>Gerente</strong> Habitaciones, precios y provisiones.</li>
+            <li><strong>Gerente</strong> Habitaciones, precios y proveeduría.</li>
             <li><strong>Recepcionista</strong> Reservas y datos de clientes.</li>
             <li><strong>Cliente</strong> Busca, reserva y ve sus fechas.</li>
             <li><strong>Proveedor</strong> Consulta necesidades y envía ofertas.</li>

@@ -66,7 +66,7 @@ include __DIR__ . '/includes/header.php';
 
 <div class="pagina-cabeza">
     <div>
-        <p class="pagina-intro">Indica tu precio por unidad. El total se calcula multiplicando por la cantidad solicitada.</p>
+        <p class="pagina-intro">Indica tu precio por unidad. El total se calcula por la cantidad solicitada.</p>
     </div>
     <div class="pagina-acciones">
         <a href="proveeduria.php" class="btn-panel btn-panel-linea">&larr; Volver a proveeduría</a>
@@ -119,7 +119,7 @@ include __DIR__ . '/includes/header.php';
             <div><dt>Entrega</dt><dd><?= fecha_corta($necesidad['needed_by']) ?></dd></div>
             <div class="total"><dt>Ofertas recibidas</dt><dd><?= (int) $pdo->query('SELECT COUNT(*) FROM supply_offers WHERE supply_id = ' . (int) $id)->fetchColumn() ?></dd></div>
         </dl>
-        <p class="resumen-nota">Gerencia compara precio, plazo y condiciones. Solo una oferta queda aceptada por necesidad.</p>
+        <p class="resumen-nota">Gerencia compara precio, plazo y condiciones. Solo se acepta una oferta por necesidad.</p>
     </aside>
 </div>
 
