@@ -1,0 +1,12 @@
+# Configuración local con contraseñas: no se sube al repositorio.
+includes/config.php
+
+# Archivos de revisión y empaquetado
+qa*.php
+_entrega/
+*.zip
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
