@@ -13,6 +13,16 @@ comunes y el control de sesión.
 - Repositorio: `https://github.com/jorgevillamar369-glitch/pwapractica6` (crear al publicar)
 - Hospedaje: pendiente de subir al panel de InfinityFree
 
+## Equipo
+
+**Grupo 04 · Programación Web Avanzada**
+
+- Norka Mideros
+- Jorge Villamar
+- Liseth Criollo
+- Bruce Balarezo
+- Chinlle Carrillo
+
 ## Cuentas de prueba
 
 | Rol | Correo | Contraseña |

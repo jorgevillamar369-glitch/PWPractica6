@@ -660,6 +660,16 @@ p { margin: 0 0 1em; }
 }
 .pie-abajo p { margin: 0; }
 
+.pie-equipo {
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .13);
+}
+.pie-equipo .pie-titulo { margin: 0; flex: none; }
+.pie-integrantes { color: #c2ccc6; font-size: 13px; margin: 0; }
+
 /* ---------- Páginas interiores ---------- */
 
 .pagina-interior { padding-bottom: 100px; }
@@ -1529,6 +1539,7 @@ p { margin: 0 0 1em; }
     .franja-reserva { padding: 60px 0; }
     .sitio-pie { padding-top: 52px; }
     .pie-abajo { flex-direction: column; gap: 6px; }
+    .pie-equipo { flex-direction: column; gap: 6px; }
 }
 
 @media (max-width: 560px) {
