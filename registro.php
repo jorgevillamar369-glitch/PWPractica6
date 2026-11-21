@@ -86,7 +86,7 @@ $titulo = 'Crear cuenta · ' . APP_NOMBRE;
         </a>
         <div class="acceso-frase">
             <p class="sobrelinea claro">Tu cuenta de huésped</p>
-            <p class="acceso-cita">“Tus fechas en un solo lugar. Cambiar una reserva también es parte del viaje.”</p>
+            <p class="acceso-cita">“Tus fechas en un solo lugar. Cancelar también es parte del viaje.”</p>
             <p class="acceso-pie">Habitaciones frente al mar · Desayuno incluido</p>
         </div>
     </aside>

@@ -23,9 +23,9 @@ $textoFormas = $formas === 1
     : ucfirst(numero_en_letras($formas)) . ' formas de quedarse';
 
 $descripciones = [
-    'Doble'    => 'Cama king o dos individuales, balcón y ducha de lluvia. Para dos personas.',
-    'Suite'    => 'Sala pequeña, tina y vista al jardín de mangle. Terraza en la planta alta.',
-    'Familiar' => 'Dos ambientes con litera, mesa para cuatro y ventanales hacia la piscina.',
+    'Doble'    => 'Cama king o dos individuales, según la habitación. Baño privado.',
+    'Suite'    => 'Cama king y un espacio adicional, según la habitación. Baño privado.',
+    'Familiar' => 'Cuatro personas, con baño privado y desayuno.',
 ];
 
 $llegada = date('Y-m-d', strtotime('+7 days'));

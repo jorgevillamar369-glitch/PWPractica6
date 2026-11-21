@@ -57,7 +57,7 @@ include __DIR__ . '/includes/header.php';
                     <?php if ((int) $h['is_available'] === 1): ?>
                         <a href="disponibilidad.php?personas=<?= (int) $h['capacity'] ?>" class="btn-panel btn-panel-mini">Ver fechas</a>
                     <?php else: ?>
-                        <span class="btn-panel btn-panel-mini desactivado">En mantenimiento</span>
+                        <a href="disponibilidad.php" class="btn-panel btn-panel-mini">Ver otras fechas</a>
                     <?php endif; ?>
                 </div>
             </article>

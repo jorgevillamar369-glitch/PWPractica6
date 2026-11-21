@@ -57,6 +57,23 @@ menú. Un usuario que escriba una URL que no le corresponde recibe un 403.
 - **Seguridad**: PDO con consultas preparadas, CSRF en todos los formularios,
   sesiones con `HttpOnly` y `SameSite=Lax`, y contraseñas cifradas.
 
+## Datos de ficción del hotel
+
+La portada describe un hotel ficticio. Estos valores son la fuente de verdad de
+esa copy; si cambian, se actualizan aquí y en la base cuando corresponda.
+
+| Dato | Valor |
+| --- | --- |
+| Habitaciones | 8, según la tabla `rooms` |
+| Apertura | 2019 |
+| Playa | 3 minutos a pie |
+| Piscina | 14 metros |
+| Parqueadero | 6 puestos |
+| Wi-Fi | 100 Mbps |
+| Desayuno | 07:00 a 10:00 |
+| Llegada | desde las 14:00 |
+| Salida | hasta las 11:00 |
+
 ## Base de datos
 
 El archivo `sql/pwapractica6.sql` crea la base, las tablas y los datos de
