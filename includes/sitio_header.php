@@ -29,6 +29,9 @@ $pagina = $pagina ?? '';
             <a href="index.php#hotel">El hotel</a>
             <a href="index.php#servicios">Servicios</a>
             <a href="index.php#entorno">El entorno</a>
+            <button type="button" class="nav-grupo" data-grupo aria-haspopup="dialog" aria-controls="grupoDialogo">
+                <?= icono('usuarios') ?> Grupo 04
+            </button>
         </nav>
 
         <div class="sitio-acciones">

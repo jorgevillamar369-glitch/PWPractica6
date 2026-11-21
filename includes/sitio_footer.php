@@ -32,6 +32,7 @@
         <div class="pie-equipo">
             <p class="pie-titulo">Grupo 04</p>
             <p class="pie-integrantes">Norka Mideros · Jorge Villamar · Liseth Criollo · Bruce Balarezo · Chinlle Carrillo</p>
+            <button type="button" class="btn-grupo" data-grupo aria-haspopup="dialog" aria-controls="grupoDialogo">Ver integrantes</button>
         </div>
 
         <div class="pie-abajo">
@@ -40,6 +41,8 @@
         </div>
     </div>
 </footer>
+
+<?php include __DIR__ . '/grupo_modal.php'; ?>
 
 <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="assets/js/app.js"></script>

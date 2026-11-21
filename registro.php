@@ -136,10 +136,13 @@ $titulo = 'Crear cuenta · ' . APP_NOMBRE;
             </form>
 
             <p class="acceso-registro">¿Ya tienes cuenta? <a href="login.php">Inicia sesión</a>.</p>
+
+            <button type="button" class="grupo-acceso" data-grupo aria-haspopup="dialog" aria-controls="grupoDialogo">Grupo 04 · ver integrantes</button>
         </div>
     </section>
 </main>
 
+<?php include __DIR__ . '/includes/grupo_modal.php'; ?>
 <script src="assets/js/app.js"></script>
 </body>
 </html>

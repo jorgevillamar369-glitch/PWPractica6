@@ -69,6 +69,9 @@ $menu[] = ['proveeduria.php', 'Proveeduría', 'caja', [ROL_ADMIN, ROL_GERENTE, R
                 <small><?= e(etiqueta_rol($u['rol'])) ?></small>
             </span>
         </div>
+        <button type="button" class="menu-enlace grupo-menu" data-grupo aria-haspopup="dialog" aria-controls="grupoDialogo">
+            <?= icono('usuarios') ?><span>Grupo 04</span>
+        </button>
         <a href="logout.php" class="menu-enlace salir"><?= icono('salir') ?><span>Cerrar sesión</span></a>
     </div>
 </div>

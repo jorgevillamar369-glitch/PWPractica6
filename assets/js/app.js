@@ -137,4 +137,46 @@
             totalTexto.textContent = formatearDinero(precio * noches);
         }
     }
+
+    /* Diálogo accesible del grupo */
+    var grupoDialogo = document.getElementById('grupoDialogo');
+    if (grupoDialogo && typeof grupoDialogo.showModal === 'function') {
+        var grupoFoco = null;
+
+        document.querySelectorAll('[data-grupo]').forEach(function (boton) {
+            boton.addEventListener('click', function () {
+                if (menuSitio) {
+                    menuSitio.classList.remove('abierto');
+                }
+                if (botonMenu) {
+                    botonMenu.setAttribute('aria-expanded', 'false');
+                }
+                if (!grupoDialogo.open) {
+                    grupoFoco = document.activeElement;
+                    grupoDialogo.showModal();
+                    document.body.classList.add('sin-scroll');
+                }
+            });
+        });
+
+        document.querySelectorAll('[data-grupo-cerrar]').forEach(function (boton) {
+            boton.addEventListener('click', function () {
+                grupoDialogo.close();
+            });
+        });
+
+        grupoDialogo.addEventListener('click', function (evento) {
+            if (evento.target === grupoDialogo) {
+                grupoDialogo.close();
+            }
+        });
+
+        grupoDialogo.addEventListener('close', function () {
+            document.body.classList.remove('sin-scroll');
+            if (grupoFoco) {
+                grupoFoco.focus();
+                grupoFoco = null;
+            }
+        });
+    }
 })();

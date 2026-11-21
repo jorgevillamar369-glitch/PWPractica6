@@ -23,6 +23,9 @@ comunes y el control de sesión.
 - Bruce Balarezo
 - Chinlle Carrillo
 
+El sitio incluye un botón «Grupo 04» en la cabecera y otro «Ver integrantes»
+en el pie. Ambos abren una ficha accesible con los cinco nombres.
+
 ## Cuentas de prueba
 
 | Rol | Correo | Contraseña |

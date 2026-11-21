@@ -118,10 +118,13 @@ $titulo = 'Ingresar · ' . APP_NOMBRE;
             </details>
 
             <p class="acceso-registro">¿Todavía no tienes cuenta? <a href="registro.php">Regístrate como cliente</a>.</p>
+
+            <button type="button" class="grupo-acceso" data-grupo aria-haspopup="dialog" aria-controls="grupoDialogo">Grupo 04 · ver integrantes</button>
         </div>
     </section>
 </main>
 
+<?php include __DIR__ . '/includes/grupo_modal.php'; ?>
 <script src="assets/js/app.js"></script>
 </body>
 </html>
