@@ -1,220 +1,94 @@
-# Hotel Mangle · Sistema de reservas
+# Hotel Mangle · Práctica 6
 
-Práctica 6 de **Programación Web Avanzada** (Grupo 04). Aplicación web para
-gestionar las reservas de un hotel pequeño en Ayampe, Manabí.
+Sistema de reservas de un hotel pequeño en Ayampe, Manabí. Práctica 6 de
+**Programación Web Avanzada**, Grupo 04.
 
-Usa **HTML5, Bootstrap 5, CSS propio, JavaScript sin librerías y PHP con MySQL**.
-No hay framework de backend: cada página incluye la conexión, las funciones
-comunes y el control de sesión.
-
-## Direcciones
+## Enlaces
 
 - Sitio en vivo: `https://pwapractica6.infinityfreeapp.com`
-- Sitio local: `http://localhost:8090`
 - Repositorio: `https://github.com/jorgevillamar369-glitch/PWPractica6`
-- Hospedaje: InfinityFree, cuenta `if0_43441439`
+- Local: `http://localhost:8090`
 
 ## Equipo
 
-**Grupo 04 · Programación Web Avanzada**
-
-- Bruce Balarezo
-- Norka Mideros
-- Mauro Chinlle
-- Jorge Villamar
-- Liseth Criollo
-
-El sitio incluye una sección «Grupo 04» en la portada, con los cinco nombres.
-La cabecera enlaza a esa sección y el pie mantiene el botón «Ver integrantes»
-para abrir la ficha accesible.
+Grupo 04: Bruce Balarezo, Norka Mideros, Mauro Chinlle, Jorge Villamar y
+Liseth Criollo.
 
 ## Cuentas de prueba
 
 | Rol | Correo | Contraseña |
 | --- | --- | --- |
 | Administrador | `admin@hotelmangle.ec` | `Admin123!` |
-| Gerente del hotel | `gerente@hotelmangle.ec` | `Gerente123!` |
-| Recepcionista | `recepcion@hotelmangle.ec` | `Recepcion123!` |
+| Gerente | `gerente@hotelmangle.ec` | `Gerente123!` |
+| Recepción | `recepcion@hotelmangle.ec` | `Recepcion123!` |
 | Cliente | `cliente@hotelmangle.ec` | `Cliente123!` |
 | Proveedor | `proveedor@hotelmangle.ec` | `Proveedor123!` |
 
-Las contraseñas están cifradas con `password_hash()` y se verifican con
-`password_verify()`. Cámbialas antes de publicar el sitio.
+Las contraseñas se guardan con `password_hash()`. Cámbialas antes de un
+despliegue real.
 
-## Roles y permisos
+## Roles
 
-| Módulo | Administrador | Gerente | Recepción | Cliente | Proveedor |
-| --- | :---: | :---: | :---: | :---: | :---: |
-| Panel | Sí | Sí | Sí | Sí | Sí |
-| Habitaciones | Ver | Crear, editar, eliminar | Ver | Consultar y reservar | No |
-| Reservas | Todas | Todas | Todas | Solo las propias | No |
-| Clientes | Sí | No | Sí | No | No |
-| Usuarios | Sí | No | No | No | No |
-| Proveeduría | Sí | Sí | No | No | Sí |
-
-Los permisos se comprueban en el servidor con `exigir_roles()`, no solo en el
-menú. Un usuario que escriba una URL que no le corresponde recibe un 403.
-
-## Qué hace el sistema
-
-- **Portada pública** con habitaciones, tarifas, servicios y buscador de fechas.
-- **Búsqueda de disponibilidad** por rango de fechas y número de huéspedes. Una
-  habitación se considera ocupada si tiene una reserva pendiente o confirmada
-  que se cruce con las fechas pedidas.
-- **Reserva en línea** para clientes registrados, con cálculo de noches y total.
-  La reserva queda pendiente hasta que recepción la confirma.
-- **Recepción** crea reservas a nombre de un cliente y las confirma en el acto.
-- **Gerencia** administra habitaciones, precios, capacidad y disponibilidad.
-- **Administración** gestiona las cuentas de los cinco roles.
-- **Proveeduría**: gerencia publica necesidades de insumos; los proveedores
-  envían precio por unidad; gerencia acepta una oferta y marca el pedido como
-  recibido.
-- **Seguridad**: PDO con consultas preparadas, CSRF en todos los formularios,
-  sesiones con `HttpOnly` y `SameSite=Lax`, y contraseñas cifradas.
-
-## Datos de ficción del hotel
-
-La portada describe un hotel ficticio. Estos valores son la fuente de verdad de
-esa copy; si cambian, se actualizan aquí y en la base cuando corresponda.
-
-| Dato | Valor |
+| Rol | Puede |
 | --- | --- |
-| Habitaciones | 8, según la tabla `rooms` |
-| Apertura | 2019 |
-| Playa | 3 minutos a pie |
-| Piscina | 14 metros |
-| Parqueadero | 6 puestos |
-| Wi-Fi | 100 Mbps |
-| Desayuno | 07:00 a 10:00 |
-| Llegada | desde las 14:00 |
-| Salida | hasta las 11:00 |
+| Administrador | Gestionar usuarios y supervisar el sistema |
+| Gerente | Habitaciones, precios y proveeduría |
+| Recepción | Reservas y datos de clientes |
+| Cliente | Buscar, reservar y ver sus reservas |
+| Proveedor | Ver necesidades y enviar ofertas |
 
-## Base de datos
+Los permisos se comprueban en el servidor, no solo en el menú.
 
-El archivo `sql/pwapractica6.sql` crea la base, las tablas y los datos de
-ejemplo. `sql/pwapractica6_hosting.sql` es el mismo contenido sin
-`CREATE DATABASE` ni `USE`, para importar en un hospedaje compartido.
+## Funciones
 
-Tablas del enunciado:
+- Portada, habitaciones y buscador de disponibilidad por fechas.
+- Reservas con control de cruces, noches y total.
+- Confirmación, cancelación y cierre de estancias.
+- Gestión de habitaciones, clientes y usuarios.
+- Proveeduría: necesidad, oferta y pedido recibido.
+- PDO, CSRF, contraseñas cifradas y sesiones seguras.
 
-- `roles`: Administrator, Hotel Manager, Receptionist, Customer, Supplier.
-- `users`: nombre, correo único, contraseña cifrada, rol y teléfono.
-- `rooms`: número único, tipo, precio, disponibilidad, capacidad y foto.
-- `bookings`: cliente, habitación, fechas, huéspedes, total y estado.
-- `supplies`: insumos que necesita el hotel y proveedor asignado.
+## Tecnologías
 
-Tablas y campos añadidos para completar el flujo:
-
-- `supply_offers`: ofertas de los proveedores por cada necesidad.
-- `bookings.status`: `pending`, `confirmed`, `cancelled`, `completed`.
-- `bookings.guests`, `bookings.total` y `bookings.notes`.
-- `rooms.capacity`, `rooms.description` y `rooms.image`.
-- `users.phone`, `users.active` y `users.created_at`.
-
-## Requisitos
-
-- PHP 8.1 o superior con `pdo_mysql` y `mbstring`.
-- MySQL 8 o MariaDB 10.4 o superior.
-- Laragon, XAMPP o WAMP.
+PHP 8.1 o superior, MySQL, Bootstrap 5, CSS y JavaScript propios. Sin framework
+de backend: cada página incluye la conexión y las funciones comunes.
 
 ## Instalación local
 
-1. Copia la carpeta a `C:\laragon\www\pwapractica6`.
-2. Importa `sql/pwapractica6.sql` desde phpMyAdmin o por consola.
-3. Copia `includes/config.example.php` como `includes/config.php` y ajusta el
-   puerto y las credenciales. En este equipo la base corre en el puerto `3307`
-   con el usuario `root` sin contraseña.
-4. Abre `http://localhost:8090` o configura un virtual host.
+1. Copia el proyecto a Laragon o XAMPP.
+2. Importa `sql/pwapractica6.sql`.
+3. Copia `includes/config.example.php` como `includes/config.php` y ajusta los
+   datos de MySQL.
+4. Abre `http://localhost:8090` o el virtual host.
 
-Con el servidor integrado de PHP:
+Con el servidor integrado:
 
 ```bash
 php -S localhost:8090 -t .
 ```
 
-## Publicar en el hosting
+## Publicación
 
-El sitio ya está publicado en `https://pwapractica6.infinityfreeapp.com`.
-Estos pasos quedan como referencia para volver a desplegarlo.
+- Sube el contenido a `pwapractica6.infinityfreeapp.com/htdocs`, **no** a
+  `/htdocs`: allí está la práctica 5.
+- Importa `sql/pwapractica6_hosting.sql` en la base del hosting.
+- Configura `includes/config.php` con host, nombre, usuario y contraseña de esa
+  base.
+- `includes/config.php` no se sube al repositorio porque contiene las claves.
 
-**Aviso de esta cuenta:** en la cuenta `if0_43441439`, la carpeta `/htdocs`
-contiene la práctica 5. El sitio nuevo vive en
-`pwapractica6.infinityfreeapp.com/htdocs`; no subir nada a `/htdocs`.
-
-1. Entra al panel de InfinityFree y abre la cuenta del subdominio.
-2. El subdominio es `pwapractica6.infinityfreeapp.com`.
-3. En **MySQL Databases**, la base es `if0_43441439_pwapractica6`, con host
-   `sql109.infinityfree.com` y usuario `if0_43441439`.
-4. Entra a phpMyAdmin desde el panel, selecciona esa base e importa
-   `sql/pwapractica6_hosting.sql`.
-5. Abre `includes/config.php` y cambia solo estas constantes:
-
-   ```php
-   const APP_DEBUG  = false;
-   const DB_HOST    = 'sql109.infinityfree.com';
-   const DB_PORT    = '3306';
-   const DB_NOMBRE  = 'if0_43441439_pwapractica6';
-   const DB_USUARIO = 'if0_43441439';
-   const DB_CLAVE   = 'la_clave_del_panel';
-   ```
-
-6. Sube el **contenido** de la carpeta a
-   `pwapractica6.infinityfreeapp.com/htdocs`, no a `/htdocs`.
-   Deben verse `index.php`, `includes/`, `assets/` y `sql/`.
-7. Abre `https://pwapractica6.infinityfreeapp.com` y prueba las cinco cuentas.
-8. Cambia las contraseñas de demostración desde el panel de administración.
-
-El archivo `includes/.htaccess` bloquea el acceso directo al código interno en
-servidores Apache. El archivo `.htaccess` de la raíz evita listar directorios.
-
-## Subir a GitHub
-
-```bash
-git init
-git add .
-git commit -m "Sistema de reservas Hotel Mangle"
-git branch -M main
-git remote add origin https://github.com/jorgevillamar369-glitch/PWPractica6.git
-git push -u origin main
-```
-
-`includes/config.php` está en `.gitignore` porque contiene las contraseñas. En el
-repositorio queda `config.example.php` como plantilla.
+El sitio ya está publicado en la URL de arriba.
 
 ## Estructura
 
 ```
-pwapractica6/
-├── index.php                 Portada pública
-├── disponibilidad.php        Buscador de fechas
-├── login.php, registro.php   Acceso y registro de clientes
-├── panel.php                 Panel según el rol
-├── habitaciones.php          Listado y administración
-├── habitacion_form.php       Alta y edición de habitaciones
-├── habitacion_eliminar.php   Baja con control de reservas
-├── reservas.php              Reservas propias o de todo el hotel
-├── reserva_form.php          Nueva reserva con control de cruces
-├── reserva_estado.php        Confirmar, cancelar o finalizar
-├── clientes.php              Directorio de huéspedes (recepción)
-├── cliente_form.php          Alta y edición de clientes
-├── usuarios.php              Cuentas del sistema (administración)
-├── usuario_form.php          Alta y edición de usuarios
-├── usuario_eliminar.php      Baja con control de historial
-├── proveeduria.php           Necesidades y ofertas
-├── proveeduria_detalle.php   Comparación de ofertas
-├── proveeduria_accion.php    Aceptar, rechazar o recibir
-├── necesidad_form.php        Publicar una necesidad
-├── oferta_form.php           Enviar una oferta (proveedor)
-├── includes/                 Conexión, funciones, sesión y plantillas
-├── assets/                   CSS, JS, fuentes, imágenes y Bootstrap local
-├── sql/                      Base de datos local y para hosting
-└── README.md
+index.php, disponibilidad.php, login.php, registro.php, panel.php
+reservas.php, habitaciones.php, clientes.php, usuarios.php, proveeduria.php
+includes/   conexión, funciones, sesión y plantillas
+assets/     CSS, JS, fuentes, imágenes y Bootstrap local
+sql/        base local y base para hosting
 ```
 
 ## Créditos
 
-- Fotografías: Pexels (uso libre, sin atribución obligatoria).
-- Tipografías: Fraunces e Instrument Sans (SIL Open Font License), locales.
-- Bootstrap 5.3.3 (MIT).
-
-Clase práctica 6. No representa un hotel real.
+Fotografías: Pexels. Tipografías: Fraunces e Instrument Sans. Bootstrap 5.3.3.
+Clase práctica 6, Grupo 04.
