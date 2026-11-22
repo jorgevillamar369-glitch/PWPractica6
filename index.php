@@ -41,7 +41,7 @@ include __DIR__ . '/includes/sitio_header.php';
 
         <div class="contenedor portada-contenido">
             <p class="sobrelinea claro">Ayampe · Manabí · Ecuador</p>
-            <h1><?= e($textoHabitaciones) ?><br>entre el manglar<br>y el mar.</h1>
+            <h1>Hotel Mangle</h1>
             <p class="portada-texto">Un hotel pequeño en la costa de Manabí. Desayuno, piscina y la playa a tres minutos a pie.</p>
             <p class="portada-datos"><?= e($textoHabitaciones) ?> <span>·</span> Piscina <span>·</span> Desayuno incluido</p>
         </div>
