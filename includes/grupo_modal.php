@@ -9,11 +9,11 @@
         <p class="grupo-subtitulo">Práctica 6 · Sistema de reservas Hotel Mangle</p>
 
         <ul class="grupo-lista">
-            <li><span aria-hidden="true">01</span>Norka Mideros</li>
-            <li><span aria-hidden="true">02</span>Jorge Villamar</li>
-            <li><span aria-hidden="true">03</span>Liseth Criollo</li>
-            <li><span aria-hidden="true">04</span>Bruce Balarezo</li>
-            <li><span aria-hidden="true">05</span>Chinlle Carrillo</li>
+            <li><span aria-hidden="true">01</span>Bruce Balarezo</li>
+            <li><span aria-hidden="true">02</span>Norka Mideros</li>
+            <li><span aria-hidden="true">03</span>Mauro Chinlle</li>
+            <li><span aria-hidden="true">04</span>Jorge Villamar</li>
+            <li><span aria-hidden="true">05</span>Liseth Criollo</li>
         </ul>
 
         <p class="grupo-nota" id="grupoNota">Clase práctica 6. No representa un hotel real.</p>

@@ -18,11 +18,11 @@ comunes y el control de sesión.
 
 **Grupo 04 · Programación Web Avanzada**
 
+- Bruce Balarezo
 - Norka Mideros
+- Mauro Chinlle
 - Jorge Villamar
 - Liseth Criollo
-- Bruce Balarezo
-- Chinlle Carrillo
 
 El sitio incluye una sección «Grupo 04» en la portada, con los cinco nombres.
 La cabecera enlaza a esa sección y el pie mantiene el botón «Ver integrantes»

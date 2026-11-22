@@ -31,7 +31,7 @@
 
         <div class="pie-equipo">
             <p class="pie-titulo">Grupo 04</p>
-            <p class="pie-integrantes">Norka Mideros · Jorge Villamar · Liseth Criollo · Bruce Balarezo · Chinlle Carrillo</p>
+            <p class="pie-integrantes">Bruce Balarezo · Norka Mideros · Mauro Chinlle · Jorge Villamar · Liseth Criollo</p>
             <button type="button" class="btn-grupo" data-grupo aria-haspopup="dialog" aria-controls="grupoDialogo">Ver integrantes</button>
         </div>
 
