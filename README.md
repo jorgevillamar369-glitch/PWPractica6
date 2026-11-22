@@ -9,9 +9,10 @@ comunes y el control de sesión.
 
 ## Direcciones
 
+- Sitio en vivo: `https://pwapractica6.infinityfreeapp.com`
 - Sitio local: `http://localhost:8090`
-- Repositorio: `https://github.com/jorgevillamar369-glitch/pwapractica6` (crear al publicar)
-- Hospedaje: pendiente de subir al panel de InfinityFree
+- Repositorio: `https://github.com/jorgevillamar369-glitch/PWPractica6`
+- Hospedaje: InfinityFree, cuenta `if0_43441439`
 
 ## Equipo
 
@@ -132,30 +133,34 @@ php -S localhost:8090 -t .
 
 ## Publicar en el hosting
 
-Estos pasos están pensados para InfinityFree, el hospedaje gratuito usado en la
-práctica anterior.
+El sitio ya está publicado en `https://pwapractica6.infinityfreeapp.com`.
+Estos pasos quedan como referencia para volver a desplegarlo.
 
-1. Entra al panel de InfinityFree y abre **Create Account**.
-2. Elige un subdominio, por ejemplo `hotelmangle.infinityfreeapp.com`. Espera a
-   que el panel termine de crearlo.
-3. En **MySQL Databases**, crea una base. Anota el nombre completo con prefijo,
-   el usuario, la contraseña y el host (normalmente `sqlXXX.infinityfree.com`).
+**Aviso de esta cuenta:** en la cuenta `if0_43441439`, la carpeta `/htdocs`
+contiene la práctica 5. El sitio nuevo vive en
+`pwapractica6.infinityfreeapp.com/htdocs`; no subir nada a `/htdocs`.
+
+1. Entra al panel de InfinityFree y abre la cuenta del subdominio.
+2. El subdominio es `pwapractica6.infinityfreeapp.com`.
+3. En **MySQL Databases**, la base es `if0_43441439_pwapractica6`, con host
+   `sql109.infinityfree.com` y usuario `if0_43441439`.
 4. Entra a phpMyAdmin desde el panel, selecciona esa base e importa
    `sql/pwapractica6_hosting.sql`.
 5. Abre `includes/config.php` y cambia solo estas constantes:
 
    ```php
    const APP_DEBUG  = false;
-   const DB_HOST    = 'sqlXXX.infinityfree.com';
+   const DB_HOST    = 'sql109.infinityfree.com';
    const DB_PORT    = '3306';
-   const DB_NOMBRE  = 'if0_XXXXXXXX_hotelmangle';
-   const DB_USUARIO = 'if0_XXXXXXXX';
+   const DB_NOMBRE  = 'if0_43441439_pwapractica6';
+   const DB_USUARIO = 'if0_43441439';
    const DB_CLAVE   = 'la_clave_del_panel';
    ```
 
-6. Sube el **contenido** de la carpeta a `htdocs`, no la carpeta contenedora.
+6. Sube el **contenido** de la carpeta a
+   `pwapractica6.infinityfreeapp.com/htdocs`, no a `/htdocs`.
    Deben verse `index.php`, `includes/`, `assets/` y `sql/`.
-7. Abre `https://hotelmangle.infinityfreeapp.com` y prueba las cinco cuentas.
+7. Abre `https://pwapractica6.infinityfreeapp.com` y prueba las cinco cuentas.
 8. Cambia las contraseñas de demostración desde el panel de administración.
 
 El archivo `includes/.htaccess` bloquea el acceso directo al código interno en
@@ -168,7 +173,7 @@ git init
 git add .
 git commit -m "Sistema de reservas Hotel Mangle"
 git branch -M main
-git remote add origin https://github.com/jorgevillamar369-glitch/pwapractica6.git
+git remote add origin https://github.com/jorgevillamar369-glitch/PWPractica6.git
 git push -u origin main
 ```
 
