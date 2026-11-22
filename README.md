@@ -24,8 +24,9 @@ comunes y el control de sesión.
 - Bruce Balarezo
 - Chinlle Carrillo
 
-El sitio incluye un botón «Grupo 04» en la cabecera y otro «Ver integrantes»
-en el pie. Ambos abren una ficha accesible con los cinco nombres.
+El sitio incluye una sección «Grupo 04» en la portada, con los cinco nombres.
+La cabecera enlaza a esa sección y el pie mantiene el botón «Ver integrantes»
+para abrir la ficha accesible.
 
 ## Cuentas de prueba
 
@@ -216,4 +217,4 @@ pwapractica6/
 - Tipografías: Fraunces e Instrument Sans (SIL Open Font License), locales.
 - Bootstrap 5.3.3 (MIT).
 
-Proyecto académico. No representa un hotel real.
+Clase práctica 6. No representa un hotel real.

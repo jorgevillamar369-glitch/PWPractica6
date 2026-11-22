@@ -16,7 +16,7 @@
             <li><span aria-hidden="true">05</span>Chinlle Carrillo</li>
         </ul>
 
-        <p class="grupo-nota" id="grupoNota">Proyecto académico. No representa un hotel real.</p>
+        <p class="grupo-nota" id="grupoNota">Clase práctica 6. No representa un hotel real.</p>
 
         <div class="grupo-pie">
             <button type="button" class="btn-panel" data-grupo-cerrar>Cerrar</button>

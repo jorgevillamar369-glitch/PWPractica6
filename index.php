@@ -177,6 +177,24 @@ include __DIR__ . '/includes/sitio_header.php';
             </div>
         </div>
     </section>
+
+    <section class="seccion-equipo" id="equipo" aria-labelledby="equipoTitulo">
+        <div class="contenedor">
+            <div class="equipo-cabeza">
+                <p class="sobrelinea">Clase práctica 6</p>
+                <h2 id="equipoTitulo">Grupo 04</h2>
+                <p class="equipo-intro">Programación Web Avanzada. Sistema de reservas Hotel Mangle.</p>
+            </div>
+
+            <ul class="equipo-lista">
+                <li><span aria-hidden="true">01</span>Norka Mideros</li>
+                <li><span aria-hidden="true">02</span>Jorge Villamar</li>
+                <li><span aria-hidden="true">03</span>Liseth Criollo</li>
+                <li><span aria-hidden="true">04</span>Bruce Balarezo</li>
+                <li><span aria-hidden="true">05</span>Chinlle Carrillo</li>
+            </ul>
+        </div>
+    </section>
 </main>
 
 <?php include __DIR__ . '/includes/sitio_footer.php'; ?>

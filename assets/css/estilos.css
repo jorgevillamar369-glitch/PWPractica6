@@ -638,6 +638,51 @@ p { margin: 0 0 1em; }
 .franja-acciones p { color: #d3ded7; max-width: 42ch; }
 .franja-acciones a:not(.btn-sitio) { color: #fff; }
 
+/* Sección del grupo */
+
+.seccion-equipo {
+    padding: 84px 0;
+    background: var(--papel-claro);
+    border-top: 1px solid var(--linea);
+    scroll-margin-top: 96px;
+}
+
+.seccion-equipo .contenedor {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.equipo-cabeza h2 { font-size: clamp(2.4rem, 4vw, 3.4rem); margin-bottom: 10px; }
+.equipo-intro { color: var(--tinta-suave); max-width: 34ch; margin: 0; }
+
+.equipo-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 44px;
+}
+
+.equipo-lista li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    border-top: 1px solid var(--linea);
+    padding: 14px 0;
+    font-size: 16px;
+}
+
+.equipo-lista li:nth-child(-n+2) { border-top-color: var(--tinta); }
+
+.equipo-lista span {
+    font-family: var(--serif);
+    font-size: 12px;
+    color: var(--acento);
+}
+
 /* ---------- Pie ---------- */
 
 .sitio-pie {
@@ -1601,6 +1646,7 @@ body.sin-scroll { overflow: hidden; }
     .tarjeta-habitacion:last-child .tarjeta-foto img { aspect-ratio: 4 / 3; }
 
     .rejilla-editorial { grid-template-columns: 1fr; gap: 38px; }
+    .seccion-equipo .contenedor { grid-template-columns: 1fr; gap: 34px; }
     .editorial-foto { max-width: 620px; }
     .seccion-cabeza { grid-template-columns: 1fr; gap: 20px; }
 
@@ -1629,6 +1675,7 @@ body.sin-scroll { overflow: hidden; }
 @media (max-width: 780px) {
     body { font-size: 16px; }
     .seccion { padding: 78px 0; }
+    .seccion-equipo { padding: 64px 0; }
     .seccion-entorno { padding-bottom: 78px; }
     .portada h1 { font-size: clamp(2.5rem, 10vw, 3.4rem); }
     .portada-texto { font-size: 16px; }
@@ -1692,6 +1739,7 @@ body.sin-scroll { overflow: hidden; }
     .cifras dt { font-size: 24px; }
 
     .pie-arriba { grid-template-columns: 1fr; gap: 30px; }
+    .equipo-lista { grid-template-columns: 1fr; }
     .franja-reserva h2 br { display: none; }
 
     .campo-doble { grid-template-columns: 1fr; gap: 0; }

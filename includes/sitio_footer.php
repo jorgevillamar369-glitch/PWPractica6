@@ -36,7 +36,7 @@
         </div>
 
         <div class="pie-abajo">
-            <p>Proyecto académico de Programación Web Avanzada. No representa un hotel real.</p>
+            <p>Clase práctica 6 de Programación Web Avanzada. No representa un hotel real.</p>
             <p>Fotografías: Pexels. Tipografías: Fraunces e Instrument Sans.</p>
         </div>
     </div>
